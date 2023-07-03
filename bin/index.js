@@ -46,19 +46,20 @@ program
   .description('create a new project')
   .alias('c')
   .action(async (name) => {
-    // console.log(
-    //   '\r\n' +
-    //     chalk.white.bgCyanBright.bold(
-    //       figlet.textSync('jsonxi-client', {
-    //         font: 'Standard',
-    //         horizontalLayout: 'default',
-    //         verticalLayout: 'default',
-    //         width: 80,
-    //         whitespaceBreak: true
-    //       })
-    //     )
-    // )
-    // console.log(`\r\nRun ${chalk.cyan(`fe <command> --help`)} for detailed usage of given command\r\n`)
+    console.log(
+      '\r\n' +
+        chalk.yellow(
+          figlet.textSync('jsonxi-cli', {
+            font: 'Standard',
+            horizontalLayout: 'default',
+            verticalLayout: 'default',
+            width: 80,
+            whitespaceBreak: true
+          })
+        ) +
+        '\r\n'
+    )
+    // console.log(`\r\nRun ${chalk.cyan(`jsonxi-cli <command> --help`)} for detailed usage of given command\r\n`)
     const {type} = await inquirer.prompt([
       {
         type: 'list',
