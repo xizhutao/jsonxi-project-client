@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
-const {Command} = require('commander')
-const {name, version} = require('../package.json')
-const {promisify} = require('util')
+const { Command } = require('commander')
+const { name, version } = require('../package.json')
+const { promisify } = require('util')
 const figlet = promisify(require('figlet'))
 const chalk = require('chalk')
 const inquirer = require('inquirer')
@@ -13,8 +13,8 @@ const process = require('child_process') // node 环境下的子进程
 const program = new Command()
 const gitClone = (type, name) => {
   let url
-  if (type === 'headline-news') {
-    url = 'https://github.com/xizhutao/Healine_News.git '
+  if (type === 'micro-app-qiankun') {
+    url = 'git@github.com:xizhutao/react-template-creator.git'
   } else if (type === 'geek-h5') {
     url = 'git@github.com:xizhutao/geek-h5.git '
   }
@@ -48,24 +48,24 @@ program
   .action(async (name) => {
     console.log(
       '\r\n' +
-        chalk.yellow(
-          figlet.textSync('jsonxi-cli', {
-            font: 'Standard',
-            horizontalLayout: 'default',
-            verticalLayout: 'default',
-            width: 80,
-            whitespaceBreak: true
-          })
-        ) +
-        '\r\n'
+      chalk.yellow(
+        figlet.textSync('jsonxi-cli', {
+          font: 'Standard',
+          horizontalLayout: 'default',
+          verticalLayout: 'default',
+          width: 80,
+          whitespaceBreak: true
+        })
+      ) +
+      '\r\n'
     )
     // console.log(`\r\nRun ${chalk.cyan(`jsonxi-cli <command> --help`)} for detailed usage of given command\r\n`)
-    const {type} = await inquirer.prompt([
+    const { type } = await inquirer.prompt([
       {
         type: 'list',
         name: 'type',
         message: 'which do you want',
-        choices: ['geek-h5', 'headline-news'],
+        choices: ['geek-h5', 'micro-app-qiankun'],
         filter: function (val) {
           return val.toLowerCase()
         }
