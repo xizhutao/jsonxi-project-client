@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/xizhutao/react-template-creator.git"
   },
+  "homepage": "https://github.com/xizhutao/react-template-creator#readme",
   "author": "xizhutao",
   "license": "ISC",
   "dependencies": {
